@@ -1,0 +1,7 @@
+syntax: glob
+.vs
+foo_new_playlist/Debug
+foo_new_playlist/Release
+portable
+Debug
+Release
