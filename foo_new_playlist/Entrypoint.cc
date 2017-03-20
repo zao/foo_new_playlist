@@ -6,7 +6,7 @@
 #pragma comment(lib, "shared.lib")
 #pragma comment(lib, "Shlwapi.lib")
 
-DECLARE_COMPONENT_VERSION("New Playlist", "1.0", "zao");
+DECLARE_COMPONENT_VERSION("New Named Playlist", "1.0", "zao");
 VALIDATE_COMPONENT_FILENAME("foo_new_playlist.dll");
 
 // {D753F438-37C6-406B-A52A-0A7161AF6E3A}
@@ -47,8 +47,9 @@ struct Commands : mainmenu_commands
 
   bool get_description(t_uint32 p_index, pfc::string_base& p_out) override
   {
-    p_out = "Creates a new, empty playlist with a custom name, see advanced "
-            "configuration for format.";
+    p_out =
+      "Creates a new, empty playlist with a custom name, see advanced "
+      "configuration for format using %maybe_counter% and %always_counter%.";
     return true;
   }
 
@@ -69,8 +70,7 @@ struct Commands : mainmenu_commands
         p_found_flag = true;
         p_out->write_int(titleformat_inputtypes::unknown, counter);
         return true;
-      }
-      else if (stricmp(p_name, "always_counter") == 0) {
+      } else if (stricmp(p_name, "always_counter") == 0) {
         p_found_flag = true;
         p_out->write_int(titleformat_inputtypes::unknown, counter);
         return true;
@@ -111,7 +111,8 @@ struct Commands : mainmenu_commands
       pfc::string8 name;
       tfo->run_hook(loc, &info, &hook, name, nullptr);
       if (last_name == name) {
-        console::warning("Pattern evaluates to the same name repeatedly, consider using %maybe_counter% or %always_counter%.");
+        console::warning("Pattern evaluates to the same name repeatedly, "
+                         "consider using %maybe_counter% or %always_counter%.");
         return;
       }
       last_name = name;
