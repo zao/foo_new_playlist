@@ -1,6 +1,6 @@
 ﻿#include <SDK/foobar2000.h>
 
-DECLARE_COMPONENT_VERSION("New Named Playlist", "1.0", "zao");
+DECLARE_COMPONENT_VERSION("New Named Playlist", "1.1", "zao");
 VALIDATE_COMPONENT_FILENAME("foo_new_playlist.dll");
 
 // {D753F438-37C6-406B-A52A-0A7161AF6E3A}
