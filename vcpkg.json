@@ -1,0 +1,7 @@
+{
+  "name": "foo-new-playlist",
+  "version": "1.0.0",
+  "dependencies": [
+    "foobar2000-sdk"
+  ]
+}

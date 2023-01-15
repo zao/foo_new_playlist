@@ -1,11 +1,5 @@
 ﻿#include <SDK/foobar2000.h>
 
-#pragma comment(lib, "foobar2000_component_client.lib")
-#pragma comment(lib, "foobar2000_sdk.lib")
-#pragma comment(lib, "pfc.lib")
-#pragma comment(lib, "shared.lib")
-#pragma comment(lib, "Shlwapi.lib")
-
 DECLARE_COMPONENT_VERSION("New Named Playlist", "1.0", "zao");
 VALIDATE_COMPONENT_FILENAME("foo_new_playlist.dll");
 
